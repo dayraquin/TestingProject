@@ -1,0 +1,10 @@
+pool: <rbtree.RBTree> 1
+
+initialize:
+    self.tree = <rbtree.RBTree>(Node(11, 'k'))
+
+input: self.tree.insert(<int>, <str>)
+input: self.tree.delete(<int>)
+input: self.tree.get_node(<int>)
+
+property: self.tree.Root.color == 'k'
