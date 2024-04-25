@@ -1,10 +1,15 @@
 pool: <rbtree.RBTree> 1
+pool: <rbtree.Node> 3
 
 initialize:
     self.tree = <rbtree.RBTree>(Node(11, 'k'))
+    self.node1 = <rbtree.Node>(2, 'r')
+    self.node2 = <rbtree.Node>(14, 'r')
 
-input: self.tree.insert(<int>, <str>)
-input: self.tree.delete(<int>)
-input: self.tree.get_node(<int>)
+input: self.tree._get_all_leaf_paths()
+input: self.tree._get_all_leaf_paths_from(self.node1)
+input: self.tree._get_all_leaf_paths_from(self.node2)
 
-property: self.tree.Root.color == 'k'
+property: isinstance(self.tree._get_all_leaf_paths(), list)
+property: isinstance(self.tree._get_all_leaf_paths_from(self.node1), list)
+property: isinstance(self.tree._get_all_leaf_paths_from(self.node2), list)
