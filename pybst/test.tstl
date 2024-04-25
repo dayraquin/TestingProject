@@ -6,10 +6,10 @@ initialize:
     self.node1 = <rbtree.Node>(2, 'r')
     self.node2 = <rbtree.Node>(14, 'r')
 
-input: self.tree._get_all_leaf_paths()
-input: self.tree._get_all_leaf_paths_from(self.node1)
-input: self.tree._get_all_leaf_paths_from(self.node2)
+input: self.tree.is_valid()
+input: self.tree.is_valid(self.node1)
+input: self.tree.is_valid(self.node2)
 
-property: isinstance(self.tree._get_all_leaf_paths(), list)
-property: isinstance(self.tree._get_all_leaf_paths_from(self.node1), list)
-property: isinstance(self.tree._get_all_leaf_paths_from(self.node2), list)
+property: isinstance(self.tree.is_valid(), bool)
+property: isinstance(self.tree.is_valid(self.node1), bool)
+property: isinstance(self.tree.is_valid(self.node2), bool)
