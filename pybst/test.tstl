@@ -1,5 +1,5 @@
 @import bstree
-pool: <int> 3
+pool: <int> 5
 pool: <bstree> 2
 pool: <Node> 2
 
@@ -10,6 +10,28 @@ property: <bstree>.is_valid()
 <Node> := <bstree>.get_node(<int>)
 
 <bstree>.insert(<int>, <int>)
+<BSTree>.insert(10, 'value10')
+assert <BSTree>.get_node(10).value == 'value10'
+<BSTree>.insert(20, 'value20')
+assert <BSTree>.get_node(20).value == 'value20'
+<BSTree>.delete(10)
+assert <BSTree>.get_node(10) is None
+
+<BSTree>.insert(10, 'value10')
+<BSTree>.insert(20, 'value20')
+<BSTree>.insert(30, 'value30')
+assert <BSTree>.get_max().key == 30
+assert <BSTree>.get_min().key == 10
+assert <BSTree>.get_element_count() == 3
+assert <BSTree>.get_height() == 2
+
+<BSTree>.insert(10, 'value10')
+<BSTree>.insert(20, 'value20')
+<BSTree>.insert(30, 'value30')
+assert <BSTree>.is_valid()
+assert <BSTree>.get_height() == 2
+
+
 <bstree>.delete(<int>)
 <bstree>.get_node(<int>)
 <bstree>.get_max()
