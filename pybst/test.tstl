@@ -1,17 +1,41 @@
-@import rbtree
+@import bstree
 
-pool: <rbtree.RBTree> 1
-pool: <rbtree.Node> 3
+<@
+import random
 
-initialize:
-    self.tree = <rbtree.RBTree>(Node(11, 'k'))
-    self.node1 = <rbtree.Node>(2, 'r')
-    self.node2 = <rbtree.Node>(14, 'r')
+# Define the system under test (SUT)
+sut = SUT()
 
-input: self.tree.is_valid()
-input: self.tree.is_valid(self.node1)
-input: self.tree.is_valid(self.node2)
+# Define the BST
+tree = BSTree()
 
-property: isinstance(self.tree.is_valid(), bool)
-property: isinstance(self.tree.is_valid(self.node1), bool)
-property: isinstance(self.tree.is_valid(self.node2), bool)
+# Define actions
+@tstl.action
+def insert(key: int, value: int):
+    tree.insert(key, value)
+
+@tstl.action
+def is_valid():
+    return tree.is_valid()
+
+@tstl.action
+def preorder():
+    return tree.preorder()
+
+# Define properties
+@tstl.property
+def valid_property():
+    assert tree.is_valid()
+
+pool: <int> 5
+pool: <tree> 5 OPAQUE REF
+
+<int> := <[1..20]>
+<int> += 1
+
+<tree> := BSTree()
+<tree>.insert(<int>, <int>)
+{AttributeError, TypeError} <tree>.is_valid()
+{AttributeError, TypeError} <tree>.preorder()
+@>
+
