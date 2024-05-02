@@ -1,37 +1,22 @@
-<@
-import random
-from bstree import BSTree
+@import BSTree
+pool: <int> 3
+pool: <BSTree> 2
+pool: <Node> 2
 
-# Define the BST
-tree = BSTree()
-
-# Define actions
-@tstl.action
-def insert(key: int, value: int):
-    tree.insert(key, value)
-
-@tstl.action
-def is_valid():
-    return tree.is_valid()
-
-@tstl.action
-def preorder():
-    return tree.preorder()
-
-# Define properties
-@tstl.property
-def valid_property():
-    assert tree.is_valid()
-
-pool: <int> 5
-pool: <tree> 5 OPAQUE REF
+property: <BSTree>.is_valid()
 
 <int> := <[1..20]>
-<int> += 1
+<BSTree> := BSTree.BSTree()
+<Node> := <BSTree>.get_node(<int>)
 
-<tree> := BSTree()
-<tree>.insert(<int>, <int>)
-{AttributeError, TypeError} <tree>.is_valid()
-{AttributeError, TypeError} <tree>.preorder()
-@>
-
+<BSTree>.insert(<int>, <int>)
+<BSTree>.delete(<int>)
+<BSTree>.get_node(<int>)
+<BSTree>.get_max()
+<BSTree>.get_min()
+<BSTree>.get_element_count()
+<BSTree>.get_height()
+<BSTree>.preorder()
+<BSTree>.inorder()
+<BSTree>.postorder()
+<BSTree>.levelorder()
