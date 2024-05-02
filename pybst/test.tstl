@@ -10,26 +10,26 @@ property: <bstree>.is_valid()
 <Node> := <bstree>.get_node(<int>)
 
 <bstree>.insert(<int>, <int>)
-<BSTree>.insert(10, 'value10')
-assert <BSTree>.get_node(10).value == 'value10'
-<BSTree>.insert(20, 'value20')
-assert <BSTree>.get_node(20).value == 'value20'
-<BSTree>.delete(10)
-assert <BSTree>.get_node(10) is None
+<bstree>.insert(10, 'value10')
+assert <bstree>.get_node(10).value == 'value10'
+<bstree>.insert(20, 'value20')
+assert <bstree>.get_node(20).value == 'value20'
+<bstree>.delete(10)
+assert <bstree>.get_node(10) is None
 
-<BSTree>.insert(10, 'value10')
-<BSTree>.insert(20, 'value20')
-<BSTree>.insert(30, 'value30')
-assert <BSTree>.get_max().key == 30
-assert <BSTree>.get_min().key == 10
-assert <BSTree>.get_element_count() == 3
-assert <BSTree>.get_height() == 2
+<bstree>.insert(10, 'value10')
+<bstree>.insert(20, 'value20')
+<bstree>.insert(30, 'value30')
+assert <bstree>.get_max().key == 30
+assert <bstree>.get_min().key == 10
+assert <bstree>.get_element_count() == 3
+assert <bstree>.get_height() == 2
 
-<BSTree>.insert(10, 'value10')
-<BSTree>.insert(20, 'value20')
-<BSTree>.insert(30, 'value30')
-assert <BSTree>.is_valid()
-assert <BSTree>.get_height() == 2
+<bstree>.insert(10, 'value10')
+<bstree>.insert(20, 'value20')
+<bstree>.insert(30, 'value30')
+assert <bstree>.is_valid()
+assert <bstree>.get_height() == 2
 
 
 <bstree>.delete(<int>)
