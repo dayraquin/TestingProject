@@ -1,10 +1,6 @@
-@import bstree
-
 <@
 import random
-
-# Define the system under test (SUT)
-sut = SUT()
+from bstree import BSTree
 
 # Define the BST
 tree = BSTree()
