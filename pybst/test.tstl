@@ -1,22 +1,22 @@
-@import BSTree
+@import bstree
 pool: <int> 3
-pool: <BSTree> 2
+pool: <bstree> 2
 pool: <Node> 2
 
-property: <BSTree>.is_valid()
+property: <bstree>.is_valid()
 
 <int> := <[1..20]>
-<BSTree> := BSTree.BSTree()
-<Node> := <BSTree>.get_node(<int>)
+<bstree> := bstree.BSTree()
+<Node> := <bstree>.get_node(<int>)
 
-<BSTree>.insert(<int>, <int>)
-<BSTree>.delete(<int>)
-<BSTree>.get_node(<int>)
-<BSTree>.get_max()
-<BSTree>.get_min()
-<BSTree>.get_element_count()
-<BSTree>.get_height()
-<BSTree>.preorder()
-<BSTree>.inorder()
-<BSTree>.postorder()
-<BSTree>.levelorder()
+<bstree>.insert(<int>, <int>)
+<bstree>.delete(<int>)
+<bstree>.get_node(<int>)
+<bstree>.get_max()
+<bstree>.get_min()
+<bstree>.get_element_count()
+<bstree>.get_height()
+<bstree>.preorder()
+<bstree>.inorder()
+<bstree>.postorder()
+<bstree>.levelorder()
