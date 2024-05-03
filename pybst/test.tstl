@@ -57,3 +57,8 @@ assert <bstree>.is_valid()
 <bstree>.inorder()
 <bstree>.postorder()
 <bstree>.levelorder()
+
+invalid_tree = bstree.BSTree()
+invalid_tree.Root = bstree.Node(10, 'value10')
+invalid_tree.Root.left = bstree.Node(20, 'value20') 
+assert not invalid_tree.is_valid()
