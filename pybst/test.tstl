@@ -16,6 +16,18 @@ assert <Node>.left is None
 assert <Node>.right is None
 assert <Node>.parent is None
 
+<bstree> := bstree.BSTree([(1, 'value1'), (2, 'value2'), (3, 'value3')])
+assert <bstree>.get_node(1).value == 'value1'
+assert <bstree>.get_node(2).value == 'value2'
+assert <bstree>.get_node(3).value == 'value3'
+assert <bstree>.is_valid()
+
+# Test with non-iterable argument
+try:
+    <bstree> := bstree.BSTree(1)
+except TypeError:
+    pass 
+
 <bstree>.insert(<int>, <int>)
 assert <bstree>.get_node(<int>).value == <int>
 assert <bstree>.is_valid()
