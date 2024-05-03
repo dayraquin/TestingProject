@@ -25,14 +25,23 @@ assert <bstree>.is_valid()
 preorder_nodes = <bstree>.preorder()
 preorder_keys = [node.key for node in preorder_nodes]
 assert preorder_keys == [10,20,30]
+assert inorder_keys == [100,200,600]
+assert inorder_keys == [6999,7000,7001]
+assert inorder_keys == [16,25,57]
 
 inorder_nodes = <bstree>.inorder()
 inorder_keys = [node.key for node in inorder_nodes]
 assert inorder_keys == [10,20,30]
+assert inorder_keys == [100,200,600]
+assert inorder_keys == [6999,7000,7001]
+assert inorder_keys == [16,25,57]
 
 postorder_nodes = <bstree>.postorder()
 postorder_keys = [node.key for node in postorder_nodes]
 assert postorder_keys == [30, 20, 10]
+assert postorder_keys == [600, 200, 100]
+assert postorder_keys == [7001, 7000, 6999]
+assert postorder_keys == [57, 25, 16]
 
 <bstree>.insert(<int>, <int>)
 assert <bstree>.get_node(<int>).value == <int>
