@@ -9,6 +9,13 @@ property: <bstree>.is_valid()
 <bstree> := bstree.BSTree()
 <Node> := <bstree>.get_node(<int>)
 
+<Node> := bstree.Node(<int>, 'value<int>')
+assert <Node>.key == <int>
+assert <Node>.value == 'value<int>'
+assert <Node>.left is None
+assert <Node>.right is None
+assert <Node>.parent is None
+
 <bstree>.insert(<int>, <int>)
 assert <bstree>.get_node(<int>).value == <int>
 assert <bstree>.is_valid()
