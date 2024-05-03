@@ -10,12 +10,14 @@ property: <bstree>.is_valid()
 <Node> := <bstree>.get_node(<int>)
 
 <bstree>.insert(<int>, <int>)
+<bstree>.insert(30, 'value30')
+assert <bstree>.get_node(30).value == 'value30'
 <bstree>.insert(10, 'value10')
 assert <bstree>.get_node(10).value == 'value10'
 <bstree>.insert(20, 'value20')
 assert <bstree>.get_node(20).value == 'value20'
-<bstree>.delete(10)
-assert <bstree>.get_node(10) is None
+<bstree>.delete(30)
+assert <bstree>.get_node(30) is None
 
 <bstree>.insert(10, 'value10')
 <bstree>.insert(20, 'value20')
@@ -30,7 +32,6 @@ assert <bstree>.get_height() == 2
 <bstree>.insert(30, 'value30')
 assert <bstree>.is_valid()
 assert <bstree>.get_height() == 2
-
 
 <bstree>.delete(<int>)
 <bstree>.get_node(<int>)
