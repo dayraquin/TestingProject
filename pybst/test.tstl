@@ -16,7 +16,8 @@ assert <Node>.left is None
 assert <Node>.right is None
 assert <Node>.parent is None
 
-<bstree> := bstree.BSTree([(1, 'value1'), (2, 'value2'), (3, 'value3')])
+# left child
+<bstree> := bstree.BSTree([(10, 'value1'), (20, 'value2'), (30, 'value3')])
 assert <bstree>.get_node(1).value == 'value1'
 assert <bstree>.get_node(2).value == 'value2'
 assert <bstree>.get_node(3).value == 'value3'
@@ -25,23 +26,65 @@ assert <bstree>.is_valid()
 preorder_nodes = <bstree>.preorder()
 preorder_keys = [node.key for node in preorder_nodes]
 assert preorder_keys == [10,20,30]
-assert preorder_keys == [10, 5, 3, 7, 15, 13, 17]
-assert preorder_keys == [6999,7000,7001]
-assert preorder_keys == [16,25,57]
 
 inorder_nodes = <bstree>.inorder()
 inorder_keys = [node.key for node in inorder_nodes]
 assert inorder_keys == [10,20,30]
-assert inorder_keys == [3, 5, 7, 10, 13, 15, 17]
-assert inorder_keys == [6999,7000,7001]
-assert inorder_keys == [16,25,57]
 
 postorder_nodes = <bstree>.postorder()
 postorder_keys = [node.key for node in postorder_nodes]
 assert postorder_keys == [30, 20, 10]
+
+# 2 children
+<bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5'), (15, 'value15'), (3, 'value3'), (7, 'value7'), (13, 'value13'), (17, 'value17')])
+preorder_nodes = <bstree>.preorder()
+preorder_keys = [node.key for node in preorder_nodes]
+assert preorder_keys == [10, 5, 3, 7, 15, 13, 17]
+
+inorder_nodes = <bstree>.inorder()
+inorder_keys = [node.key for node in inorder_nodes]
+assert inorder_keys == [3, 5, 7, 10, 13, 15, 17]
+
+postorder_nodes = <bstree>.postorder()
+postorder_keys = [node.key for node in postorder_nodes]
 assert postorder_keys == [3, 7, 5, 13, 17, 15, 10]
-assert postorder_keys == [7001, 7000, 6999]
-assert postorder_keys == [57, 25, 16]
+
+# no children
+<bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5'), (15, 'value15')])
+
+preorder_nodes = <bstree>.preorder()
+preorder_keys = [node.key for node in preorder_nodes]
+assert preorder_keys == [10, 5, 15]
+
+inorder_nodes = <bstree>.inorder()
+inorder_keys = [node.key for node in inorder_nodes]
+assert inorder_keys == [5, 10, 15]
+
+postorder_nodes = <bstree>.postorder()
+postorder_keys = [node.key for node in postorder_nodes]
+assert postorder_keys == [5, 15, 10]
+
+# left child
+<bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5'), (3, 'value3')])
+
+# The tree looks like this:
+#   10
+#  /
+# 5
+#/
+#3
+
+preorder_nodes = <bstree>.preorder()
+preorder_keys = [node.key for node in preorder_nodes]
+assert preorder_keys == [10, 5, 3]
+
+inorder_nodes = <bstree>.inorder()
+inorder_keys = [node.key for node in inorder_nodes]
+assert inorder_keys == [3, 5, 10]
+
+postorder_nodes = <bstree>.postorder()
+postorder_keys = [node.key for node in postorder_nodes]
+assert postorder_keys == [3, 5, 10]
 
 <bstree>.insert(<int>, <int>)
 assert <bstree>.get_node(<int>).value == <int>
