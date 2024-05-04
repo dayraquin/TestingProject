@@ -2,6 +2,7 @@
 pool: <int> 5
 pool: <bstree> 2
 pool: <Node> 2
+pool: <list> 10
 
 property: <bstree>.is_valid()
 
