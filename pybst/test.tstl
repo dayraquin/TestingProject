@@ -22,19 +22,13 @@ assert <bstree>.is_valid()
 # Test for a tree where left child is not less than parent
 invalid_tree = bstree.BSTree([(10, 'value10')])
 invalid_tree.Root.left = bstree.Node(20, 'value20')  
+assert not <bstree>.is_valid()
 
-try:
-    invalid_tree.is_valid()
-except Exception as e:
-    assert str(e) == "Left child of node 10 is adopted by another node!"
 
 # Test for a tree where right child is not greater than parent
-invalid_tree = bstree.BSTree([(10, 'value10')])
-invalid_tree.Root.right = bstree.Node(5, 'value5') 
-try:
-    invalid_tree.is_valid()
-except Exception as e:
-    assert str(e) == "Right child of node 10 is adopted by another node!"
+<bstree> := bstree.BSTree([(10, 'value10')])
+<bstree>.Root.right = bstree.Node(5, 'value5') 
+assert not <bstree>.is_valid()
 
 # left child
 <bstree> := bstree.BSTree([(10, 'value1'), (20, 'value2'), (30, 'value3')])
