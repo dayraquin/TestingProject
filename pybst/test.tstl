@@ -152,14 +152,17 @@ assert <bstree>.is_valid()
 assert <bstree>.get_node(<int>) is None
 assert <bstree>.is_valid()
 
-<list> := <bstree>.levelorder()
 <bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5'), (15, 'value15')])  # BST with both left and right children
+<list> := <bstree>.levelorder()
 assert <list> == [10,5,15]
 <bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5')])  # BST with only left children
+<list> := <bstree>.levelorder()
 assert <list> == [10,5] 
 <bstree> := bstree.BSTree([(10, 'value10'), (15, 'value15')])  # BST with only right children
+<list> := <bstree>.levelorder()
 assert <list> == [10,15]
 <bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5'), (15, 'value15'), (3, 'value3'), (7, 'value7'), (13, 'value13'), (17, 'value17')])
+<list> := <bstree>.levelorder()
 assert <list> == [10,5,15,3,7,13,17]
 
 
