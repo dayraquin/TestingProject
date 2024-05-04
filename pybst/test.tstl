@@ -184,3 +184,44 @@ assert <bstree>.Root.left.value == 'value5'
 <bstree>.insert(15, 'value15')
 assert <bstree>.Root.right.key == 15
 assert <bstree>.Root.right.value == 'value15'
+
+<bstree> := bstree.BSTree([])
+<bstree>.insert_from([(10, 'value10'), (5, 'value5'), (15, 'value15')])
+assert <bstree>.get_element_count() == 3
+
+<bstree> := bstree.BSTree([(10, 'value10'), (15, 'value15')])  # BST where root has a right child
+<Node> := <bstree>.get_max()
+assert <Node>.key == 15
+
+<bstree> := bstree.BSTree([(10, 'value10')])  # BST where root does not have a right child
+<Node> := <bstree>.get_max()
+assert <Node>.key == 10
+
+<bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5')])  # BST where root has a left child
+<Node> := <bstree>.get_min()
+assert <Node>.key == 5
+
+<bstree> := bstree.BSTree([(10, 'value10')])  # BST where root does not have a left child
+<Node> := <bstree>.get_min()
+assert <Node>.key == 10
+
+<bstree> := bstree.BSTree()
+<Node> := <bstree>.get_node(<int>)
+
+# Adding nodes to the BSTree
+<bstree>.insert(<Node>)
+
+# Testing get_element_count
+<int> := <bstree>.get_element_count()
+assert <int> == 1  # Since we have added only one node
+
+# Adding more nodes
+<Node> := bstree.Node(<int>, 'value<int>')
+<bstree>.insert(<Node>)
+<int> := <bstree>.get_element_count()
+assert <int> == 2  # Now we have two nodes
+
+# Testing get_element_count with a specific node
+<Node> := <bstree>.get_node(<int>)
+<int> := <bstree>.get_element_count(<Node>)
+assert <int> == 1  # The specific node has no children
