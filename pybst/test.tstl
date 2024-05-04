@@ -225,3 +225,138 @@ assert <int> == 2  # Now we have two nodes
 <Node> := <bstree>.get_node(<int>)
 <int> := <bstree>.get_element_count(<Node>)
 assert <int> == 1  # The specific node has no children
+
+
+<bstree> := bstree.BSTree()
+<Node> := <bstree>.get_node(<int>)
+
+<Node> := bstree.Node(<int>, 'value<int>')
+assert <Node>.key == <int>
+assert <Node>.value == 'value<int>'
+assert <Node>.left is None
+
+# Adding nodes to the BSTree
+<bstree>.insert(<Node>)
+
+# Testing get_height
+<int> := <bstree>.get_height()
+assert <int> == 0  # Since we have added only one node, the height is 0
+
+# Adding more nodes
+<Node> := bstree.Node(<int>, 'value<int>')
+<bstree>.insert(<Node>)
+<int> := <bstree>.get_height()
+assert <int> == 1  # Now we have two nodes, so the height is 1
+
+# Testing _delete_leaf
+<bstree>._delete_leaf(<Node>)
+<int> := <bstree>.get_element_count()
+assert <int> == 1  # After deleting a leaf, we should have one node left
+
+<bstree> := bstree.BSTree()
+<Node> := <bstree>.get_node(<int>)
+
+<Node> := bstree.Node(<int>, 'value<int>')
+assert <Node>.key == <int>
+assert <Node>.value == 'value<int>'
+assert <Node>.left is None
+
+# Adding nodes to the BSTree
+<bstree>.insert(<Node>)
+
+# Adding more nodes
+<Node> := bstree.Node(<int>, 'value<int>')
+<bstree>.insert(<Node>)
+
+# Testing _delete_leaf with a leaf node
+<bstree>._delete_leaf(<Node>)
+<int> := <bstree>.get_element_count()
+assert <int> == 1  # After deleting a leaf, we should have one node left
+
+<bstree> := bstree.BSTree()
+<Node> := <bstree>.get_node(<int>)
+
+<Node> := bstree.Node(<int>, 'value<int>')
+assert <Node>.key == <int>
+assert <Node>.value == 'value<int>'
+assert <Node>.left is None
+
+# Adding nodes to the BSTree
+<bstree>.insert(<Node>)
+
+# Adding more nodes
+<Node> := bstree.Node(<int>, 'value<int>')
+<bstree>.insert(<Node>)
+
+# Testing _delete_leaf_parent with a leaf node
+<bstree>._delete_leaf_parent(<Node>)
+<int> := <bstree>.get_element_count()
+assert <int> == 1  # After deleting a leaf, we should have one node left
+
+# Testing _delete_leaf_parent with the root node
+<Node> := <bstree>.get_node(<int>)  # Get the root node
+<bstree>._delete_leaf_parent(<Node>)
+<int> := <bstree>.get_element_count()
+assert <int> == 0  # After deleting the root, the tree should be empty
+
+<bstree> := bstree.BSTree()
+<Node> := <bstree>.get_node(<int>)
+
+<Node> := bstree.Node(<int>, 'value<int>')
+assert <Node>.key == <int>
+assert <Node>.value == 'value<int>'
+assert <Node>.left is None
+
+# Adding nodes to the BSTree
+<bstree>.insert(<Node>)
+
+# Adding more nodes
+<Node> := bstree.Node(<int>, 'value<int>')
+<bstree>.insert(<Node>)
+
+# Testing _switch_nodes with the root node and a leaf node
+<Node1> := <bstree>.get_node(<int>)  # Get the root node
+<Node2> := <bstree>.get_node(<int>)  # Get a leaf node
+<bstree>._switch_nodes(<Node1>, <Node2>)
+assert <Node1>.key == <Node2>.key  # After switching, the keys should be equal
+assert <Node1>.value == <Node2>.value  # After switching, the values should be equal
+assert <bstree>.Root.key == <Node2>.key  # The root node should now have the key of Node2
+assert <bstree>.Root.value == <Node2>.value  # The root node should now have the value of Node2
+
+# Testing _switch_nodes with two non-root nodes
+<Node1> := <bstree>.get_node(<int>)  # Get a non-root node
+<Node2> := <bstree>.get_node(<int>)  # Get another non-root node
+<bstree>._switch_nodes(<Node1>, <Node2>)
+assert <Node1>.key == <Node2>.key  # After switching, the keys should be equal
+assert <Node1>.value == <Node2>.value  # After switching, the values should be equal
+
+<bstree> := bstree.BSTree()
+<Node> := <bstree>.get_node(<int>)
+
+<Node> := bstree.Node(<int>, 'value<int>')
+assert <Node>.key == <int>
+assert <Node>.value == 'value<int>'
+assert <Node>.left is None
+
+# Adding nodes to the BSTree
+<bstree>.insert(<Node>)
+
+# Adding more nodes
+<Node> := bstree.Node(<int>, 'value<int>')
+<bstree>.insert(<Node>)
+
+# Testing delete with a leaf node
+<bstree>.delete(<Node>.key)
+<int> := <bstree>.get_element_count()
+assert <int> == 1  # After deleting a leaf, we should have one node left
+
+# Testing delete with a non-leaf node
+<bstree>.delete(<Node>.key)
+<int> := <bstree>.get_element_count()
+assert <int> == 0  # After deleting a non-leaf node, the tree should be empty
+
+# Testing delete_from with a sequence of keys
+seq = [<int>, <int>]  # Replace <int> with actual keys
+<bstree>.delete_from(seq)
+<int> := <bstree>.get_element_count()
+assert <int> == 0  # After deleting all nodes, the tree should be empty
