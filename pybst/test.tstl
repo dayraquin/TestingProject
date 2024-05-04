@@ -166,5 +166,21 @@ assert <list> == [10,15]
 <list> := <bstree>.levelorder()
 assert <list> == [10,5,15,3,7,13,17]
 
+<bstree> := bstree.BSTree([])
+<bstree>.insert(10, 'value10')
+assert <bstree>.Root.key == 10
+assert <bstree>.Root.value == 'value10'
 
+<bstree> := bstree.BSTree([(10, 'value10')])
+<bstree>.insert(10, 'value10')
+assert <bstree>.get_element_count() == 1
 
+<bstree> := bstree.BSTree([(10, 'value10')])
+<bstree>.insert(5, 'value5')
+assert <bstree>.Root.left.key == 5
+assert <bstree>.Root.left.value == 'value5'
+
+<bstree> := bstree.BSTree([(10, 'value10')])
+<bstree>.insert(15, 'value15')
+assert <bstree>.Root.right.key == 15
+assert <bstree>.Root.right.value == 'value15'
