@@ -341,18 +341,6 @@ assert <Node>.key == <int>
 assert <Node>.value == 'value<int>'
 assert <Node>.left is None
 
-# testing the __init__ method
-<int> := <[1..20]>
-<str> := 'value<int>'
-<Node> := Node(<int>, <str>)
-
-# Testing the constructor
-assert <Node>.left is None
-assert <Node>.right is None
-assert <Node>.parent is None
-assert <Node>.key == <int>
-assert <Node>.value == <str>
-
 # Adding nodes to the BSTree
 <bstree>.insert(<Node>)
 
@@ -375,3 +363,16 @@ seq = [<int>, <int>]  # Replace <int> with actual keys
 <bstree>.delete_from(seq)
 <int> := <bstree>.get_element_count()
 assert <int> == 0  # After deleting all nodes, the tree should be empty
+
+
+# testing the __init__ method
+<int> := <[1..20]>
+<str> := 'value<int>'
+<Node> := Node(<int>, <str>)
+
+# Testing the constructor
+assert <Node>.left is None
+assert <Node>.right is None
+assert <Node>.parent is None
+assert <Node>.key == <int>
+assert <Node>.value == <str>
