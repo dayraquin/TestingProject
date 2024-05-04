@@ -21,7 +21,8 @@ assert <bstree>.is_valid()
 
 # Test for a tree where left child is not less than parent
 invalid_tree = bstree.BSTree([(10, 'value10')])
-invalid_tree.Root.left = bstree.Node(20, 'value20')  # This will make the tree invalid
+invalid_tree.Root.left = bstree.Node(20, 'value20')  
+
 try:
     invalid_tree.is_valid()
 except Exception as e:
@@ -29,12 +30,11 @@ except Exception as e:
 
 # Test for a tree where right child is not greater than parent
 invalid_tree = bstree.BSTree([(10, 'value10')])
-invalid_tree.Root.right = bstree.Node(5, 'value5')  # This will make the tree invalid
+invalid_tree.Root.right = bstree.Node(5, 'value5') 
 try:
     invalid_tree.is_valid()
 except Exception as e:
     assert str(e) == "Right child of node 10 is adopted by another node!"
-
 
 # left child
 <bstree> := bstree.BSTree([(10, 'value1'), (20, 'value2'), (30, 'value3')])
@@ -86,13 +86,6 @@ assert postorder_keys == [5, 15, 10]
 
 # left child
 <bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5'), (3, 'value3')])
-
-# The tree looks like this:
-#   10
-#  /
-# 5
-#/
-#3
 
 preorder_nodes = <bstree>.preorder()
 preorder_keys = [node.key for node in preorder_nodes]
