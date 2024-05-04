@@ -2,6 +2,7 @@
 pool: <int> 5
 pool: <bstree> 2
 pool: <Node> 2
+pool: <Node1> 2
 pool: <Node2> 2
 pool: <list> 10
 
