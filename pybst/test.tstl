@@ -116,21 +116,6 @@ assert <bstree>.is_valid()
 <bstree>.insert(10, 'value10')
 <bstree>.insert(20, 'value20')
 <bstree>.insert(30, 'value30')
-assert <bstree>.get_max().key == 30
-assert <bstree>.get_min().key == 10
-assert <bstree>.get_element_count() == 3
-assert <bstree>.get_height() == 2
-assert <bstree>.is_valid()
-
-<bstree>.insert(10, 'value10')
-<bstree>.insert(20, 'value20')
-<bstree>.insert(30, 'value30')
-assert <bstree>.is_valid()
-assert <bstree>.get_height() == 2
-
-<bstree>.delete(<int>)
-assert <bstree>.get_node(<int>) is None
-assert <bstree>.is_valid()
 
 <bstree>.get_node(<int>)
 <bstree>.get_max()
@@ -141,6 +126,16 @@ assert <bstree>.is_valid()
 <bstree>.inorder()
 <bstree>.postorder()
 <bstree>.levelorder()
+
+assert <bstree>.get_max().key == 30
+assert <bstree>.get_min().key == 10
+assert <bstree>.get_element_count() == 3
+assert <bstree>.get_height() == 2
+assert <bstree>.is_valid()
+
+<bstree>.delete(<int>)
+assert <bstree>.get_node(<int>) is None
+assert <bstree>.is_valid()
 
 #invalid_tree = bstree.BSTree()
 #invalid_tree.Root = bstree.Node(10, 'value10')
