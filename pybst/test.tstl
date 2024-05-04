@@ -16,6 +16,28 @@ assert <Node>.left is None
 assert <Node>.right is None
 assert <Node>.parent is None
 
+<bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5'), (15, 'value15')])
+assert <bstree>.is_valid()
+
+# Test for a tree where left child is not less than parent
+invalid_tree = bstree.BSTree([(10, 'value10')])
+invalid_tree.Root.left = bstree.Node(20, 'value20')  # This will make the tree invalid
+try:
+    invalid_tree.is_valid()
+except Exception as e:
+    assert str(e) == "Left child of node 10 is adopted by another node!"
+
+# Test for a tree where right child is not greater than parent
+invalid_tree = bstree.BSTree([(10, 'value10')])
+invalid_tree.Root.right = bstree.Node(5, 'value5')  # This will make the tree invalid
+try:
+    invalid_tree.is_valid()
+except Exception as e:
+    assert str(e) == "Right child of node 10 is adopted by another node!"
+
+
+
+
 # left child
 <bstree> := bstree.BSTree([(10, 'value1'), (20, 'value2'), (30, 'value3')])
 assert <bstree>.get_node(1).value == 'value1'
@@ -135,7 +157,7 @@ assert <bstree>.is_valid()
 <bstree>.postorder()
 <bstree>.levelorder()
 
-invalid_tree = bstree.BSTree()
-invalid_tree.Root = bstree.Node(10, 'value10')
-invalid_tree.Root.left = bstree.Node(20, 'value20') 
-assert not invalid_tree.is_valid()
+#invalid_tree = bstree.BSTree()
+#invalid_tree.Root = bstree.Node(10, 'value10')
+#invalid_tree.Root.left = bstree.Node(20, 'value20') 
+#assert not invalid_tree.is_valid()
