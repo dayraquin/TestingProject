@@ -114,6 +114,20 @@ assert postorder_keys == [3, 5, 10]
 assert <bstree>.get_node(<int>).value == <int>
 assert <bstree>.is_valid()
 
+#deleting tree to start fresh
+<bstree>.delete(10)
+assert <bstree>.get_node(10) is None
+assert <bstree>.is_valid()
+
+<bstree>.delete(5)
+assert <bstree>.get_node(5) is None
+assert <bstree>.is_valid()
+
+<bstree>.delete(3)
+assert <bstree>.get_node(3) is None
+assert <bstree>.is_valid()
+
+# testing the insert function
 <bstree>.insert(30, 'value30')
 assert <bstree>.get_node(30).value == 'value30'
 assert <bstree>.is_valid()
@@ -125,12 +139,6 @@ assert <bstree>.is_valid()
 <bstree>.insert(20, 'value20')
 assert <bstree>.get_node(20).value == 'value20'
 assert <bstree>.is_valid()
-
-<bstree> := bstree.BSTree()
-
-<bstree>.insert(10, 'value10')
-<bstree>.insert(20, 'value20')
-<bstree>.insert(30, 'value30')
 
 <bstree>.get_node(<int>)
 <bstree>.get_max()
@@ -168,7 +176,7 @@ assert <list> == [10,15]
 <list> := <bstree>.levelorder()
 assert <list> == [10,5,15,3,7,13,17]
 
-
+#deleting the tree to insert new values
 <bstree>.delete(10)
 assert <bstree>.get_node(10) is None
 assert <bstree>.is_valid()
