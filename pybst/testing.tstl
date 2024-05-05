@@ -55,8 +55,6 @@ postorder_nodes = <bstree>.postorder()
 postorder_keys = [node.key for node in postorder_nodes]
 assert postorder_keys == [30, 20, 10]
 
-
-
 # 2 children
 <bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5'), (15, 'value15'), (3, 'value3'), (7, 'value7'), (13, 'value13'), (17, 'value17')])
 assert <bstree>.get_node(1).value == 'value10'
@@ -209,4 +207,3 @@ assert <bstree>.Root.left.value == 'value5'
 <bstree>.insert(15, 'value15')
 assert <bstree>.Root.right.key == 15
 assert <bstree>.Root.right.value == 'value15'
-
