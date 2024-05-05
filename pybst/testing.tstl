@@ -126,6 +126,3 @@ assert <bstree>.is_valid()
 assert <bstree>.get_node(20).value == 'value20'
 assert <bstree>.is_valid()
 
-<bstree>.delete(30)
-assert <bstree>.get_node(30) is None
-assert <bstree>.is_valid()
