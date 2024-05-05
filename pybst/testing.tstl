@@ -168,7 +168,34 @@ assert <list> == [10,15]
 <list> := <bstree>.levelorder()
 assert <list> == [10,5,15,3,7,13,17]
 
-<bstree> := bstree.BSTree([])
+
+<bstree>.delete(10)
+assert <bstree>.get_node(10) is None
+assert <bstree>.is_valid()
+
+<bstree>.delete(5)
+assert <bstree>.get_node(5) is None
+assert <bstree>.is_valid()
+
+<bstree>.delete(15)
+assert <bstree>.get_node(15) is None
+assert <bstree>.is_valid()
+
+<bstree>.delete(3)
+assert <bstree>.get_node(3) is None
+assert <bstree>.is_valid()
+
+<bstree>.delete(7)
+assert <bstree>.get_node(30) is None
+assert <bstree>.is_valid()
+
+<bstree>.delete(13)
+assert <bstree>.get_node(7) is None
+assert <bstree>.is_valid()
+
+<bstree>.delete(17)
+assert <bstree>.get_node(17) is None
+assert <bstree>.is_valid()
 
 <bstree>.insert(10, 'value10')
 assert <bstree>.Root.key == 10
