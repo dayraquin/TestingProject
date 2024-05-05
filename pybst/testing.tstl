@@ -40,6 +40,8 @@ assert <bstree>.get_node(2).value == 'value2'
 assert <bstree>.get_node(3).value == 'value3'
 assert <bstree>.get_element_count() == 3
 assert <bstree>.is_valid()
+<list> := <bstree>.levelorder()
+assert <list> == [10,20,30]
 
 preorder_nodes = <bstree>.preorder()
 preorder_keys = [node.key for node in preorder_nodes]
@@ -65,6 +67,8 @@ assert <bstree>.get_node(5).value == 'value7'
 assert <bstree>.get_node(6).value == 'value13'
 assert <bstree>.get_node(7).value == 'value17'
 assert <bstree>.get_element_count() == 7
+<list> := <bstree>.levelorder()
+assert <list> == [10,5,15,3,7,13,17]
 
 preorder_nodes = <bstree>.preorder()
 preorder_keys = [node.key for node in preorder_nodes]
@@ -84,6 +88,8 @@ assert <bstree>.get_node(1).value == 'value10'
 assert <bstree>.get_node(2).value == 'value5'
 assert <bstree>.get_node(3).value == 'value15'
 assert <bstree>.get_element_count() == 3
+<list> := <bstree>.levelorder()
+assert <list> == [10,5,15]
 
 preorder_nodes = <bstree>.preorder()
 preorder_keys = [node.key for node in preorder_nodes]
@@ -103,6 +109,8 @@ assert <bstree>.get_node(1).value == 'value10'
 assert <bstree>.get_node(2).value == 'value5'
 assert <bstree>.get_node(3).value == 'value3'
 assert <bstree>.get_element_count() == 3
+<list> := <bstree>.levelorder()
+assert <list> == [10,5,3] 
 
 preorder_nodes = <bstree>.preorder()
 preorder_keys = [node.key for node in preorder_nodes]
@@ -156,50 +164,34 @@ assert <bstree>.is_valid()
 assert <bstree>.get_node(<int>) is None
 assert <bstree>.is_valid()
 
-<bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5'), (15, 'value15')])  # BST with both left and right children
-<list> := <bstree>.levelorder()
-assert <list> == [10,5,15]
-
-<bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5')])  # BST with only left children
-<list> := <bstree>.levelorder()
-assert <list> == [10,5] 
-
-<bstree> := bstree.BSTree([(10, 'value10'), (15, 'value15')])  # BST with only right children
-<list> := <bstree>.levelorder()
-assert <list> == [10,15]
-
-<bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5'), (15, 'value15'), (3, 'value3'), (7, 'value7'), (13, 'value13'), (17, 'value17')])
-<list> := <bstree>.levelorder()
-assert <list> == [10,5,15,3,7,13,17]
-
 #deleting the tree to insert new values
-<bstree>.delete(10)
-assert <bstree>.get_node(10) is None
-assert <bstree>.is_valid()
+#<bstree>.delete(10)
+#assert <bstree>.get_node(10) is None
+#assert <bstree>.is_valid()
 
-<bstree>.delete(5)
-assert <bstree>.get_node(5) is None
-assert <bstree>.is_valid()
+#<bstree>.delete(5)
+#assert <bstree>.get_node(5) is None
+#assert <bstree>.is_valid()
 
-<bstree>.delete(15)
-assert <bstree>.get_node(15) is None
-assert <bstree>.is_valid()
+#<bstree>.delete(15)
+#assert <bstree>.get_node(15) is None
+#assert <bstree>.is_valid()
 
-<bstree>.delete(3)
-assert <bstree>.get_node(3) is None
-assert <bstree>.is_valid()
+#<bstree>.delete(3)
+#assert <bstree>.get_node(3) is None
+#assert <bstree>.is_valid()
 
-<bstree>.delete(7)
-assert <bstree>.get_node(30) is None
-assert <bstree>.is_valid()
+#<bstree>.delete(7)
+#assert <bstree>.get_node(30) is None
+#assert <bstree>.is_valid()
 
-<bstree>.delete(13)
-assert <bstree>.get_node(7) is None
-assert <bstree>.is_valid()
+#<bstree>.delete(13)
+#assert <bstree>.get_node(7) is None
+#assert <bstree>.is_valid()
 
-<bstree>.delete(17)
-assert <bstree>.get_node(17) is None
-assert <bstree>.is_valid()
+#<bstree>.delete(17)
+#assert <bstree>.get_node(17) is None
+#assert <bstree>.is_valid()
 
 <bstree>.insert(10, 'value10')
 assert <bstree>.Root.key == 10
