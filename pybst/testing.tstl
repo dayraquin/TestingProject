@@ -109,3 +109,19 @@ assert inorder_keys == [3, 5, 10]
 postorder_nodes = <bstree>.postorder()
 postorder_keys = [node.key for node in postorder_nodes]
 assert postorder_keys == [3, 5, 10]
+
+<bstree>.insert(<int>, <int>)
+assert <bstree>.get_node(<int>).value == <int>
+assert <bstree>.is_valid()
+
+<bstree>.insert(30, 'value30')
+assert <bstree>.get_node(30).value == 'value30'
+assert <bstree>.is_valid()
+
+<bstree>.insert(10, 'value10')
+assert <bstree>.get_node(10).value == 'value10'
+assert <bstree>.is_valid()
+
+<bstree>.insert(20, 'value20')
+assert <bstree>.get_node(20).value == 'value20'
+assert <bstree>.is_valid()
