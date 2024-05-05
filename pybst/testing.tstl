@@ -1,6 +1,7 @@
 @import bstree
 pool: <int> 5
 pool: <bstree> 2
+pool: <bstree2> 2
 pool: <Node> 2
 pool: <Node1> 2
 pool: <Node2> 2
@@ -46,12 +47,15 @@ assert not <bstree>.is_valid()
 assert not <bstree>.is_valid()
 
 # right child
-<bstree> := bstree.BSTree([(10, 'value1'), (20, 'value2'), (30, 'value3')])
-assert <bstree>.get_node(1).value == 'value1'
-assert <bstree>.get_node(2).value == 'value2'
-assert <bstree>.get_node(3).value == 'value3'
+<bstree> := bstree.BSTree([(10, 'value10'), (20, 'value20'), (30, 'value30')])
+assert <bstree>.get_node(1).value == 'value10'
+assert <bstree>.get_node(2).value == 'value20'
+assert <bstree>.get_node(3).value == 'value30'
 assert <bstree>.get_element_count() == 3
 assert <bstree>.is_valid()
+assert <bstree>.get_max().key == 30
+assert <bstree>.get_min().key == 10
+assert <bstree>.get_height() == 2
 <list> := <bstree>.levelorder()
 assert <list> == [10,20,30]
 
@@ -77,6 +81,9 @@ assert <bstree>.get_node(5).value == 'value7'
 assert <bstree>.get_node(6).value == 'value13'
 assert <bstree>.get_node(7).value == 'value17'
 assert <bstree>.get_element_count() == 7
+assert <bstree>.get_max().key == 17
+assert <bstree>.get_min().key == 3
+assert <bstree>.get_height() == 3
 <list> := <bstree>.levelorder()
 assert <list> == [10,5,15,3,7,13,17]
 
@@ -98,6 +105,9 @@ assert <bstree>.get_node(1).value == 'value10'
 assert <bstree>.get_node(2).value == 'value5'
 assert <bstree>.get_node(3).value == 'value15'
 assert <bstree>.get_element_count() == 3
+assert <bstree>.get_max().key == 15
+assert <bstree>.get_min().key == 5
+assert <bstree>.get_height() == 2
 <list> := <bstree>.levelorder()
 assert <list> == [10,5,15]
 
@@ -119,6 +129,9 @@ assert <bstree>.get_node(1).value == 'value10'
 assert <bstree>.get_node(2).value == 'value5'
 assert <bstree>.get_node(3).value == 'value3'
 assert <bstree>.get_element_count() == 3
+assert <bstree>.get_max().key == 10
+assert <bstree>.get_min().key == 3
+assert <bstree>.get_height() == 2
 <list> := <bstree>.levelorder()
 assert <list> == [10,5,3] 
 
@@ -190,3 +203,32 @@ assert <bstree>.Root.left.value == 'value5'
 <bstree>.insert(15, 'value15')
 assert <bstree>.Root.right.key == 15
 assert <bstree>.Root.right.value == 'value15'
+
+seq = [<int>, <int>]  
+<bstree>.delete_from(seq)
+<int> := <bstree>.get_element_count()
+assert <int> == 0
+
+<Node1> := <bstree>.get_node(<int>)  
+<Node2> := <bstree>.get_node(<int>)  
+<bstree>._switch_nodes(<Node1>, <Node2>)
+assert <Node1>.key == <Node2>.key 
+assert <Node1>.value == <Node2>.value  
+assert <bstree>.Root.key == <Node2>.key
+assert <bstree>.Root.value == <Node2>.value
+
+<bstree>._delete_leaf(<Node>)
+<int> := <bstree>.get_element_count()
+assert <int> == 1
+
+# Adding nodes to the BSTree
+<bstree2>.insert(<Node>)
+
+# Adding more nodes
+<Node> := bstree.Node(<int>, 'value<int>')
+<bstree2>.insert(<Node>)
+
+# Testing _delete_leaf_parent with a leaf node
+<bstree2>._delete_leaf_parent(<Node>)
+<int> := <bstree2>.get_element_count()
+assert <int> == 1
