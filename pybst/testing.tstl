@@ -33,11 +33,12 @@ assert not <bstree>.is_valid()
 <bstree>.Root.right = bstree.Node(5, 'value5') 
 assert not <bstree>.is_valid()
 
-# left child
+# right child
 <bstree> := bstree.BSTree([(10, 'value1'), (20, 'value2'), (30, 'value3')])
 assert <bstree>.get_node(1).value == 'value1'
 assert <bstree>.get_node(2).value == 'value2'
 assert <bstree>.get_node(3).value == 'value3'
+assert <bstree>.get_element_count() == 3
 assert <bstree>.is_valid()
 
 preorder_nodes = <bstree>.preorder()
@@ -52,6 +53,8 @@ postorder_nodes = <bstree>.postorder()
 postorder_keys = [node.key for node in postorder_nodes]
 assert postorder_keys == [30, 20, 10]
 
+
+
 # 2 children
 <bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5'), (15, 'value15'), (3, 'value3'), (7, 'value7'), (13, 'value13'), (17, 'value17')])
 assert <bstree>.get_node(1).value == 'value10'
@@ -61,6 +64,7 @@ assert <bstree>.get_node(4).value == 'value3'
 assert <bstree>.get_node(5).value == 'value7'
 assert <bstree>.get_node(6).value == 'value13'
 assert <bstree>.get_node(7).value == 'value17'
+assert <bstree>.get_element_count() == 7
 
 preorder_nodes = <bstree>.preorder()
 preorder_keys = [node.key for node in preorder_nodes]
@@ -79,6 +83,7 @@ assert postorder_keys == [3, 7, 5, 13, 17, 15, 10]
 assert <bstree>.get_node(1).value == 'value10'
 assert <bstree>.get_node(2).value == 'value5'
 assert <bstree>.get_node(3).value == 'value15'
+assert <bstree>.get_element_count() == 3
 
 preorder_nodes = <bstree>.preorder()
 preorder_keys = [node.key for node in preorder_nodes]
@@ -92,11 +97,12 @@ postorder_nodes = <bstree>.postorder()
 postorder_keys = [node.key for node in postorder_nodes]
 assert postorder_keys == [5, 15, 10]
 
-# leftchild
+# left child
 <bstree> := bstree.BSTree([(10, 'value10'), (5, 'value5'), (3, 'value3')])
 assert <bstree>.get_node(1).value == 'value10'
 assert <bstree>.get_node(2).value == 'value5'
 assert <bstree>.get_node(3).value == 'value3'
+assert <bstree>.get_element_count() == 3
 
 preorder_nodes = <bstree>.preorder()
 preorder_keys = [node.key for node in preorder_nodes]
@@ -139,16 +145,6 @@ assert <bstree>.is_valid()
 <bstree>.insert(20, 'value20')
 assert <bstree>.get_node(20).value == 'value20'
 assert <bstree>.is_valid()
-
-<bstree>.get_node(<int>)
-<bstree>.get_max()
-<bstree>.get_min()
-<bstree>.get_element_count()
-<bstree>.get_height()
-<bstree>.preorder()
-<bstree>.inorder()
-<bstree>.postorder()
-<bstree>.levelorder()
 
 assert <bstree>.get_max().key == 30
 assert <bstree>.get_min().key == 10
@@ -221,8 +217,4 @@ assert <bstree>.Root.left.value == 'value5'
 <bstree>.insert(15, 'value15')
 assert <bstree>.Root.right.key == 15
 assert <bstree>.Root.right.value == 'value15'
-
-<bstree> := bstree.BSTree([])
-<bstree>.insert_from([(10, 'value10'), (5, 'value5'), (15, 'value15')])
-assert <bstree>.get_element_count() == 3
 
