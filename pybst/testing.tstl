@@ -126,3 +126,24 @@ assert <bstree>.is_valid()
 assert <bstree>.get_node(20).value == 'value20'
 assert <bstree>.is_valid()
 
+<bstree> := bstree.BSTree()
+
+<bstree>.insert(10, 'value10')
+<bstree>.insert(20, 'value20')
+<bstree>.insert(30, 'value30')
+
+<bstree>.get_node(<int>)
+<bstree>.get_max()
+<bstree>.get_min()
+<bstree>.get_element_count()
+<bstree>.get_height()
+<bstree>.preorder()
+<bstree>.inorder()
+<bstree>.postorder()
+<bstree>.levelorder()
+
+assert <bstree>.get_max().key == 30
+assert <bstree>.get_min().key == 10
+assert <bstree>.get_element_count() == 3
+assert <bstree>.get_height() == 2
+assert <bstree>.is_valid()
