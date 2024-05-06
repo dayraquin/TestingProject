@@ -1,0 +1,28 @@
+import bstree
+import collections
+from tstl import make_test, test
+
+sut = BSTree()
+
+actions = [
+    ("insert", lambda: sut.insert(1, "value1")),
+    ("get_node", lambda: sut.get_node(1)),
+    ("get_max", lambda: sut.get_max()),
+    ("get_min", lambda: sut.get_min()),
+    ("get_element_count", lambda: sut.get_element_count()),
+    ("get_height", lambda: sut.get_height()),
+    ("is_valid", lambda: sut.is_valid()),
+    ("preorder", lambda: sut.preorder()),
+    ("inorder", lambda: sut.inorder()),
+    ("postorder", lambda: sut.postorder()),
+    ("levelorder", lambda: sut.levelorder())
+]
+
+properties = [
+    ("is_valid", lambda: sut.is_valid())
+]
+
+# Generate tests
+for _ in range(100):
+    test = make_test(sut, actions, properties)
+    test()
