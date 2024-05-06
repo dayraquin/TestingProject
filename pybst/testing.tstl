@@ -10,10 +10,9 @@ pool: <str> 5
 
 property: <bstree>.is_valid()
 
-<int> := DeepState_Int()
+<int> := <[1..20]>
 <bstree> := bstree.BSTree()
 <Node> := <bstree>.get_node(<int>)
-<str> := DeepState_CStr()
 
 # testing the __init__ method
 <Node> := Node(<int>, <str>)
