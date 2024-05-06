@@ -12,8 +12,7 @@ property: <bstree>.is_valid()
 assert <bstree>.get_node(<int>) is not None, "Node insertion failed"
 
 <bstree>.insert_from(<seq>)
-for i in <seq>:
-    assert <bstree>.get_node(i[0]) is not None, "Node insertion failed"
+assert <bstree>.get_element_count() == len(<seq>), "Not all elements were inserted"
 
 <bstree>.get_max()
 <bstree>.get_min()
