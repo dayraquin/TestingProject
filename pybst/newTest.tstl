@@ -1,15 +1,19 @@
 @import bstree
 pool: <int> 10
 pool: <bstree> 5
-
+pool: <seq> 5
 <bstree> := bstree.BSTree()
 
 property: <bstree>.is_valid()
 
 <int> := <[1..50]>
-
+<seq> := [ (<int>, "value"), (<int>, "value"), (<int>, "value") ]
 <bstree>.insert(<int>, "value")
 assert <bstree>.get_node(<int>) is not None, "Node insertion failed"
+
+<bstree>.insert_from(<seq>)
+for i in <seq>:
+    assert <bstree>.get_node(i[0]) is not None, "Node insertion failed"
 
 <bstree>.get_max()
 <bstree>.get_min()
