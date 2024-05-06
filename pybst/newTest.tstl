@@ -42,3 +42,19 @@ assert len(<bstree>.levelorder()) > 0, "Levelorder failed"
 <bstree>.delete(<int>)
 assert <bstree>.get_node(<int>) is None, "Deletion failed"
 <bstree>.delete_from([<int>, <int>, <int>])
+
+
+<bstree>.clear()
+assert <bstree>.get_element_count() == 0, "Clear failed"
+
+<bstree>.insert_from(<seq>)
+<bstree>.delete_min()
+assert <bstree>.get_min() != min(<seq>), "Delete min failed"
+
+<bstree>.delete_max()
+assert <bstree>.get_max() != max(<seq>), "Delete max failed"
+
+<bstree>.clear()
+<bstree>.insert_from(<seq>)
+<bstree>.delete_from(<seq>)
+assert <bstree>.get_element_count() == 0, "Delete from failed"
