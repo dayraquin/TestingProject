@@ -21,7 +21,6 @@ assert <bst>.is_valid(), "BST is not valid"
 <bst>.postorder()
 <bst>.levelorder()
 
-# Verify if a node exists in the tree
 assert <bst>.get_node(<int>) is not None, "Node not found"
 
 <bst>.delete(<int>)
