@@ -2,7 +2,7 @@
 pool: <int> 10
 pool: <bstree> 5
 pool: <seq> 5
-#pool: <node> 5
+pool: <node> 3
 <bstree> := bstree.BSTree()
 
 property: <bstree>.is_valid()
@@ -12,7 +12,7 @@ property: <bstree>.is_valid()
 <bstree>.insert(<int>, "value")
 assert <bstree>.get_node(<int>) is not None, "Node insertion failed"
 
-#<node> = bstree.Node(<int>, "value")
+<node> = bstree.Node(<int>, "value")
 #assert isinstance(<node>, bstree.Node), "Node creation failed"
 
 #<bstree> = bstree.BSTree()
