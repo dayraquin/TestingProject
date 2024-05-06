@@ -1,0 +1,29 @@
+import rbtree
+pool: <int> 5
+pool: <rbt> 3
+
+property: <rbt>.is_valid()
+
+<int> := <[1..30]>
+<rbt> := RBTree()
+
+for i in range(1, 6):
+    <rbt>.insert(i, "value")
+    assert <rbt>.get_node(i) is not None, "Node insertion failed"
+    assert <rbt>.is_valid(), "RBT is not valid after insertion"
+
+<rbt>.get_max()
+<rbt>.get_min()
+assert <rbt>.get_element_count() > 0, "Count is 0"
+assert <rbt>.get_height() > 0, "Height is 0"
+
+<rbt>.preorder()
+<rbt>.inorder()
+<rbt>.postorder()
+<rbt>.levelorder()
+
+assert <rbt>.get_node(<int>) is not None, "Node not found"
+
+<rbt>.delete(<int>)
+assert <rbt>.get_node(<int>) is None, "Deletion failed"
+assert <rbt>.is_valid(), "RBT is not valid after deletion"
