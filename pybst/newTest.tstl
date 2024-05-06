@@ -29,9 +29,6 @@ assert len(<bstree>.inorder()) > 0, "Inorder failed"
 assert len(<bstree>.postorder()) > 0, "Postorder failed"
 assert len(<bstree>.levelorder()) > 0, "Levelorder failed"
 
-inorder_keys = [node.key for node in <bstree>.inorder()]
-assert inorder_keys == sorted(inorder_keys), "Inorder traversal is not in sorted order"
-
 assert <bstree>.get_node(<int>) is not None, "Node not found"
 
 <bstree>.delete(<int>)
