@@ -1,29 +1,30 @@
-@import bstree
+import bstree
 pool: <int> 10
-pool: <bst> 5
+pool: <bstree> 5
 
-property: <bst>.is_valid()
+<bstree> := bstree.BSTree()
+
+property: <bstree>.is_valid()
 
 <int> := <[1..50]>
-<bst> := BSTree()
 
-<bst>.insert(<int>, "value")
-assert <bst>.get_node(<int>) is not None, "Node insertion failed"
+<bstree>.insert(<int>, "value")
+assert <bstree>.get_node(<int>) is not None, "Node insertion failed"
 
-<bst>.get_max()
-<bst>.get_min()
-assert <bst>.get_element_count() > 0, "Count is 0"
-assert <bst>.get_height() > 0, "Height is 0"
-assert <bst>.is_valid(), "BST is not valid"
+<bstree>.get_max()
+<bstree>.get_min()
+assert <bstree>.get_element_count() > 0, "Count is 0"
+assert <bstree>.get_height() > 0, "Height is 0"
+assert <bstree>.is_valid(), "BST is not valid"
 
-<bst>.preorder()
-<bst>.inorder()
-<bst>.postorder()
-<bst>.levelorder()
+<bstree>.preorder()
+<bstree>.inorder()
+<bstree>.postorder()
+<bstree>.levelorder()
 
-assert <bst>.get_node(<int>) is not None, "Node not found"
+assert <bstree>.get_node(<int>) is not None, "Node not found"
 
-<bst>.delete(<int>)
-assert <bst>.get_node(<int>) is None, "Deletion failed"
+<bstree>.delete(<int>)
+assert <bstree>.get_node(<int>) is None, "Deletion failed"
 
-<bst>.delete_from([<int>, <int>, <int>])
+<bstree>.delete_from([<int>, <int>, <int>])
