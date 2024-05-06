@@ -1,4 +1,4 @@
-import bstree
+@import bstree
 pool: <int> 10
 pool: <bstree> 5
 
