@@ -1,8 +1,8 @@
 @import bstree
-pool: <int> 20
-pool: <bstree> 10
-pool: <seq> 10
-pool: <node> 10
+pool: <int> 15
+pool: <bstree> 7
+pool: <seq> 7
+pool: <node> 7
 <bstree> := bstree.BSTree()
 
 property: <bstree>.is_valid()
