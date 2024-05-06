@@ -1,13 +1,13 @@
 @import bstree
-pool: <int> 10
-pool: <bstree> 5
-pool: <seq> 5
-pool: <node> 5
+pool: <int> 20
+pool: <bstree> 10
+pool: <seq> 10
+pool: <node> 10
 <bstree> := bstree.BSTree()
 
 property: <bstree>.is_valid()
 
-<int> := <[1..50]>
+<int> := <[1..100]>
 <seq> := [ (<int>, "value"), (<int>, "value"), (<int>, "value") ]
 <bstree>.insert(<int>, "value")
 assert <bstree>.get_node(<int>) is not None, "Node insertion failed"
