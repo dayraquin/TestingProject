@@ -7,7 +7,7 @@ pool: <node> 5
 
 property: <bstree>.is_valid()
 
-<int> := <[1..100]>
+<int> := <[1..50]>
 <seq> := [ (<int>, "value"), (<int>, "value"), (<int>, "value") ]
 <bstree>.insert(<int>, "value")
 assert <bstree>.get_node(<int>) is not None, "Node insertion failed"
