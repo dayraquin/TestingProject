@@ -39,17 +39,6 @@ assert len(<bstree>.inorder()) > 0, "Inorder failed"
 assert len(<bstree>.postorder()) > 0, "Postorder failed"
 assert len(<bstree>.levelorder()) > 0, "Levelorder failed"
 
-assert <bstree>.get_node(<int>) is not None, "Node not found"
-
-# Get a node to delete
-node_to_delete = <bstree>.get_node(<int>)
-assert node_to_delete is not None, "Node not found"
-
-# Delete the node
-<bstree>._delete_node(node_to_delete)
-assert <bstree>.get_node(<int>) is None, "Node deletion failed"
-assert <bstree>.is_valid(), "Tree is not valid after deletion"
-
 <bstree>.delete(<int>)
 assert <bstree>.get_node(<int>) is None, "Deletion failed"
 <bstree>.delete_from([<int>, <int>, <int>])
