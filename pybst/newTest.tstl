@@ -1,8 +1,10 @@
 @import bstree
-pool: <int> 3
-pool: <bst> 2
+pool: <int> 10
+pool: <bst> 5
+
 property: <bst>.is_valid()
-<int> := <[1..20]>
+
+<int> := <[1..50]>
 <bst> := BSTree()
 
 <bst>.insert(<int>, "value")
@@ -13,10 +15,16 @@ assert <bst>.get_node(<int>) is not None, "Node insertion failed"
 assert <bst>.get_element_count() > 0, "Count is 0"
 assert <bst>.get_height() > 0, "Height is 0"
 assert <bst>.is_valid(), "BST is not valid"
+
 <bst>.preorder()
 <bst>.inorder()
 <bst>.postorder()
 <bst>.levelorder()
+
+# Verify if a node exists in the tree
+assert <bst>.get_node(<int>) is not None, "Node not found"
+
 <bst>.delete(<int>)
 assert <bst>.get_node(<int>) is None, "Deletion failed"
+
 <bst>.delete_from([<int>, <int>, <int>])
