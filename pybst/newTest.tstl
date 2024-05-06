@@ -2,6 +2,7 @@
 pool: <int> 10
 pool: <bstree> 5
 pool: <seq> 5
+pool: <node> 5
 <bstree> := bstree.BSTree()
 
 property: <bstree>.is_valid()
@@ -10,6 +11,15 @@ property: <bstree>.is_valid()
 <seq> := [ (<int>, "value"), (<int>, "value"), (<int>, "value") ]
 <bstree>.insert(<int>, "value")
 assert <bstree>.get_node(<int>) is not None, "Node insertion failed"
+
+<node> = bstree.Node(<int>, "value")
+assert isinstance(<node>, bstree.Node), "Node creation failed"
+
+<bstree> = bstree.BSTree()
+assert isinstance(<bstree>, bstree.BSTree), "BSTree creation failed"
+
+<bstree>.insert_node(<node>)
+assert <node> in <bstree>, "Node insertion failed"
 
 <bstree>.insert_from(<seq>)
 assert <bstree>.get_element_count() == len(<seq>), "Not all elements were inserted"
@@ -40,8 +50,6 @@ assert node_to_delete is not None, "Node not found"
 assert <bstree>.get_node(<int>) is None, "Node deletion failed"
 assert <bstree>.is_valid(), "Tree is not valid after deletion"
 
-
 <bstree>.delete(<int>)
 assert <bstree>.get_node(<int>) is None, "Deletion failed"
-
 <bstree>.delete_from([<int>, <int>, <int>])
