@@ -38,7 +38,7 @@ assert all(
     and
     preorder_indices[node] < preorder_indices[node.right] if node.right else True
     for node in preorder_nodes
-), "
+), "Preorder not in order"
 
 assert <bstree>.get_node(<int>) is not None, "Node not found"
 
