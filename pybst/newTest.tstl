@@ -30,11 +30,15 @@ assert len(<bstree>.postorder()) > 0, "Postorder failed"
 assert len(<bstree>.levelorder()) > 0, "Levelorder failed"
 
 preorder_nodes = <bstree>.preorder()
-for node in preorder_nodes:
-    if node.left:
-        assert preorder_nodes.index(node) < preorder_nodes.index(node.left), "Preorder not in order"
-    if node.right:
-        assert preorder_nodes.index(node) < preorder_nodes.index(node.right), "Preorder not in order"
+preorder_indices = {node: i for i, node in enumerate(preorder_nodes)}
+
+# Check that parent comes before its children in preorder traversal
+assert all( 
+    preorder_indices[node] < preorder_indices[node.left] if node.left else True
+    and
+    preorder_indices[node] < preorder_indices[node.right] if node.right else True
+    for node in preorder_nodes
+), "
 
 assert <bstree>.get_node(<int>) is not None, "Node not found"
 
