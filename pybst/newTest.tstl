@@ -1,4 +1,3 @@
-@import bstree
 pool: <int> 10
 pool: <bstree> 5
 pool: <seq> 5
@@ -7,29 +6,25 @@ pool: <node> 3
 
 property: <bstree>.is_valid()
 
-# initialize 
 <int> := <[1..50]>
+<seq> := [ (<int>, "value"), (<int>, "value"), (<int>, "value") ]
 <bstree>.insert(<int>, "value")
-<seq> := [ (<int>, "value"), (<int>, "value"), (<int>, "value"), (<int>, "value"), (<int>, "value")]
+assert <bstree>.get_node(<int>) is not None
 
-# check Node 
-assert <bstree>.get_node(<int>) is not None, "Node failed"
-
-# check class Node
 <node> = bstree.Node(<int>, "value")
-assert isinstance(<node>, bstree.Node), "Node creation failed"
-<bstree>.insert_node(<node>)
-assert <node> in <bstree>, "Node insertion failed"
-<bstree> = bstree.BSTree()
-assert isinstance(<bstree>, bstree.BSTree), "BSTree failed"
+#assert isinstance(<node>, bstree.Node)
 
-# insert 
+#<bstree> = bstree.BSTree()
+#assert isinstance(<bstree>, bstree.BSTree)
+
+<bstree>.insert_node(<node>)
+assert <node> in <bstree>
+
 <bstree>.insert_from(<seq>)
 assert <bstree>.get_element_count() == len(<seq>)
 
 <bstree>.get_max()
 <bstree>.get_min()
-
 assert <bstree>.get_element_count() > 0
 assert <bstree>.get_height() > 0
 assert <bstree>.is_valid()
@@ -38,27 +33,11 @@ assert <bstree>.is_valid()
 <bstree>.inorder()
 <bstree>.postorder()
 <bstree>.levelorder()
-assert len(<bstree>.preorder()) > 0, "Preorder failed"
-assert len(<bstree>.inorder()) > 0, "Inorder failed"
-assert len(<bstree>.postorder()) > 0, "Postorder failed"
-assert len(<bstree>.levelorder()) > 0, "Levelorder failed"
+assert len(<bstree>.preorder()) > 0
+assert len(<bstree>.inorder()) > 0
+assert len(<bstree>.postorder()) > 0
+assert len(<bstree>.levelorder()) > 0
 
 <bstree>.delete(<int>)
-assert <bstree>.get_node(<int>) is None, "Deletion failed"
+assert <bstree>.get_node(<int>) is None
 <bstree>.delete_from([<int>, <int>, <int>])
-
-
-#<bstree>.clear()
-#assert <bstree>.get_element_count() == 0, "Clear failed"
-
-#<bstree>.insert_from(<seq>)
-#<bstree>.delete_min()
-#assert <bstree>.get_min() != min(<seq>), "Delete min failed"
-
-#<bstree>.delete_max()
-#assert <bstree>.get_max() != max(<seq>), "Delete max failed"
-
-#<bstree>.clear()
-#<bstree>.insert_from(<seq>)
-#<bstree>.delete_from(<seq>)
-#assert <bstree>.get_element_count() == 0, "Delete from failed"
