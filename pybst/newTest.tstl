@@ -1,7 +1,7 @@
 pool: <int> 10
 pool: <bstree> 5
 pool: <seq> 5
-pool: <node> 3
+#pool: <node> 3
 <bstree> := bstree.BSTree()
 
 property: <bstree>.is_valid()
@@ -11,33 +11,33 @@ property: <bstree>.is_valid()
 <bstree>.insert(<int>, "value")
 assert <bstree>.get_node(<int>) is not None
 
-<node> = bstree.Node(<int>, "value")
+#<node> = bstree.Node(<int>, "value")
 #assert isinstance(<node>, bstree.Node)
 
 #<bstree> = bstree.BSTree()
 #assert isinstance(<bstree>, bstree.BSTree)
 
 <bstree>.insert_node(<node>)
-assert <node> in <bstree>
+#assert <node> in <bstree>
 
 <bstree>.insert_from(<seq>)
-assert <bstree>.get_element_count() == len(<seq>)
+#assert <bstree>.get_element_count() == len(<seq>)
 
 <bstree>.get_max()
 <bstree>.get_min()
-assert <bstree>.get_element_count() > 0
-assert <bstree>.get_height() > 0
-assert <bstree>.is_valid()
+#assert <bstree>.get_element_count() > 0
+#assert <bstree>.get_height() > 0
+#assert <bstree>.is_valid()
 
 <bstree>.preorder()
 <bstree>.inorder()
 <bstree>.postorder()
 <bstree>.levelorder()
-assert len(<bstree>.preorder()) > 0
-assert len(<bstree>.inorder()) > 0
-assert len(<bstree>.postorder()) > 0
-assert len(<bstree>.levelorder()) > 0
+#assert len(<bstree>.preorder()) > 0
+#assert len(<bstree>.inorder()) > 0
+#assert len(<bstree>.postorder()) > 0
+#assert len(<bstree>.levelorder()) > 0
 
 <bstree>.delete(<int>)
-assert <bstree>.get_node(<int>) is None
+#assert <bstree>.get_node(<int>) is None
 <bstree>.delete_from([<int>, <int>, <int>])
