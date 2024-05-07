@@ -15,8 +15,8 @@ assert <bstree>.get_node(<int>) is not None, "Node insertion failed"
 <node> = bstree.Node(<int>, "value")
 assert isinstance(<node>, bstree.Node), "Node creation failed"
 
-#<bstree> = bstree.BSTree()
-#assert isinstance(<bstree>, bstree.BSTree), "BSTree creation failed"
+<bstree> = bstree.BSTree()
+assert isinstance(<bstree>, bstree.BSTree), "BSTree creation failed"
 
 <bstree>.insert_node(<node>)
 assert <node> in <bstree>, "Node insertion failed"
