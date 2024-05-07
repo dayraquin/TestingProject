@@ -8,19 +8,14 @@ pool: <node> 3
 property: <bstree>.is_valid()
 
 <int> := <[1..100]>
-<seq> := [ (<int>, "value"), (<int>, "value"), (<int>, "value") ]
+
 <bstree>.insert(<int>, "value")
 assert <bstree>.get_node(<int>) is not None
-
-#<node> = bstree.Node(<int>, "value")
-#assert isinstance(<node>, bstree.Node)
-
-#<bstree> = bstree.BSTree()
-#assert isinstance(<bstree>, bstree.BSTree)
 
 <bstree>.insert_node(<node>)
 assert <node> in <bstree>
 
+<seq> := [ (<int>, "value"), (<int>, "value"), (<int>, "value") ]
 <bstree>.insert_from(<seq>)
 assert <bstree>.get_element_count() == len(<seq>)
 
@@ -28,16 +23,16 @@ assert <bstree>.get_element_count() == len(<seq>)
 <bstree>.inorder()
 <bstree>.postorder()
 <bstree>.levelorder()
+<bstree>.get_min()
+<bstree>.get_max()
 assert len(<bstree>.preorder()) > 0
 assert len(<bstree>.inorder()) > 0
 assert len(<bstree>.postorder()) > 0
 assert len(<bstree>.levelorder()) > 0
-<bstree>.get_min()
-<bstree>.get_max()
 assert <bstree>.get_element_count() > 0
 assert <bstree>.get_height() > 0
 assert <bstree>.is_valid()
 
 <bstree>.delete(<int>)
-#assert <bstree>.get_node(<int>) is None
+assert <bstree>.get_node(<int>) is None
 <bstree>.delete_from([<int>, <int>, <int>])
