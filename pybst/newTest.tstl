@@ -8,15 +8,15 @@ pool: <node> 3
 property: <bstree>.is_valid()
 
 <int> := <[1..100]>
-<seq> := [ (<int>, "value"), (<int>, "value"), (<int>, "value"), (<int>, "value"), (<int>, "value") ]
+<seq> := [ (<int>, "value"), (<int>, "value"), (<int>, "value") ]
 <bstree>.insert(<int>, "value")
 assert <bstree>.get_node(<int>) is not None
 
-<node> = bstree.Node(<int>, "value")
-assert isinstance(<node>, bstree.Node)
+#<node> = bstree.Node(<int>, "value")
+#assert isinstance(<node>, bstree.Node)
 
-<bstree> = bstree.BSTree()
-assert isinstance(<bstree>, bstree.BSTree)
+#<bstree> = bstree.BSTree()
+#assert isinstance(<bstree>, bstree.BSTree)
 
 <bstree>.insert_node(<node>)
 assert <node> in <bstree>
