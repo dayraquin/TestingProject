@@ -27,16 +27,8 @@ assert isinstance(<bstree>, bstree.BSTree), "BSTree failed"
 <bstree>.insert_from(<seq>)
 assert <bstree>.get_element_count() == len(<seq>)
 
-<bstree>.get_max()
-<bstree>.get_min()
-
-max_value = <bstree>.get_max()
-min_value = <bstree>.get_min()
-
-# Now you can use assertions to check if these methods are working correctly
-assert max_value == max(<int>, <int>, <int>)
-assert min_value == min(<int>, <int>, <int>)
-
+assert <bstree>.get_max() == max(<seq>)
+assert <bstree>.get_min() == max(<seq>)
 
 assert <bstree>.get_element_count() > 0
 assert <bstree>.get_height() > 0
