@@ -7,28 +7,40 @@ pool: <node> 3
 
 property: <bstree>.is_valid()
 
+# initialize 
 <int> := <[1..50]>
-<seq> := [ (<int>, "value"), (<int>, "value"), (<int>, "value") ]
 <bstree>.insert(<int>, "value")
-assert <bstree>.get_node(<int>) is not None, "Node insertion failed"
+<seq> := [ (<int>, "value"), (<int>, "value"), (<int>, "value"), (<int>, "value"), (<int>, "value")]
 
+# check Node 
+assert <bstree>.get_node(<int>) is not None, "Node failed"
+
+# check class Node
 <node> = bstree.Node(<int>, "value")
 assert isinstance(<node>, bstree.Node), "Node creation failed"
-
-<bstree> = bstree.BSTree()
-assert isinstance(<bstree>, bstree.BSTree), "BSTree creation failed"
-
 <bstree>.insert_node(<node>)
 assert <node> in <bstree>, "Node insertion failed"
+<bstree> = bstree.BSTree()
+assert isinstance(<bstree>, bstree.BSTree), "BSTree failed"
 
+# insert 
 <bstree>.insert_from(<seq>)
-assert <bstree>.get_element_count() == len(<seq>), "Not all elements were inserted"
+assert <bstree>.get_element_count() == len(<seq>)
 
 <bstree>.get_max()
 <bstree>.get_min()
-assert <bstree>.get_element_count() > 0, "Count is 0"
-assert <bstree>.get_height() > 0, "Height is 0"
-assert <bstree>.is_valid(), "BST is not valid"
+
+max_value = <bstree>.get_max()
+min_value = <bstree>.get_min()
+
+# Now you can use assertions to check if these methods are working correctly
+assert max_value == max(<int>, <int>, <int>)
+assert min_value == min(<int>, <int>, <int>)
+
+
+assert <bstree>.get_element_count() > 0
+assert <bstree>.get_height() > 0
+assert <bstree>.is_valid()
 
 <bstree>.preorder()
 <bstree>.inorder()
